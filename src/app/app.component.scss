@@ -1,0 +1,43 @@
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 60px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding: 0 120px;
+  }
+}
+
+.container {
+  @apply relative isolate overflow-hidden shadow-2xl rounded text-center bg-gray-900 py-16 sm:py-24 lg:py-32 content-center;
+}
+
+.button {
+  @apply flex-none rounded-md bg-indigo-500 h-10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
+}
+.input {
+  @apply flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6;
+}
+
+.table_line {
+  &:nth-of-type(2n) {
+    @apply bg-gray-600/20 rounded;
+  }
+  max-width: 300px;
+}
+
+.title {
+  @media screen and (max-width: 480px) {
+    @apply text-xl;
+  }
+}
