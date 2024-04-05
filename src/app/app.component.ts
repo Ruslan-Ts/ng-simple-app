@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { InputDataComponent } from "./components/input-data/input-data.component";
+import { InputChangeComponent } from "./components/input-change/input-change.component";
 
 
 class Item {
@@ -20,7 +21,7 @@ class Item {
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, FormsModule, InputDataComponent]
+    imports: [RouterOutlet, FormsModule, InputDataComponent, InputChangeComponent]
 })
 export class AppComponent {
   title = 'Shopping list';
