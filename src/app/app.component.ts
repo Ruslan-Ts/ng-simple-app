@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { InputDataComponent } from "./components/input-data/input-data.component";
 import { InputChangeComponent } from "./components/input-change/input-change.component";
+import { ChildComponent } from "./components/test-drive/test-drive.component";
 
 
 class Item {
@@ -21,9 +22,21 @@ class Item {
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
-    imports: [RouterOutlet, FormsModule, InputDataComponent, InputChangeComponent]
+    imports: [RouterOutlet, FormsModule, InputDataComponent, InputChangeComponent, ChildComponent]
 })
-export class AppComponent {
+export class AppComponent implements OnChanges { 
+    name ="Ruslan";
+  age = 35;
+  
+    ngOnChanges(changes: SimpleChanges) {
+      for (let propName in changes) {
+        let chng = changes[propName];
+        let cur  = JSON.stringify(chng.currentValue);
+        let prev = JSON.stringify(chng.previousValue);
+        console.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+      }
+    }
+  
   title = 'Shopping list';
 
   text: string = '';

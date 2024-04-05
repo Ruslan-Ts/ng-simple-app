@@ -19,7 +19,9 @@
       >
       <input id="price" class="input" type="number" [(ngModel)]="price" />
     </div>
-    <button class="button" (click)="addItem(text, price)">Add item</button>
+    <button class="animate-pulse button" (click)="addItem(text, price)">
+      Add item
+    </button>
   </div>
   <div class="flex justify-center text-center">
     <table class="mt-5 text-lg leading-8 text-gray-300">
@@ -58,10 +60,19 @@
   <app-input-change [(name)]="title"></app-input-change>
   <br />
   <br />
-  <p class="text-red-500 text-7xl">{{ clicks }}</p>
+  <p class="animate-bounce text-red-500 text-7xl">{{ clicks }}</p>
   <br />
   <br />
   <app-input-data (onChanged)="onChanged($event)"></app-input-data>
+  <br />
+  <br />
+  <test-comp class="text-yellow-400" [name]="name"></test-comp>
+  <input type="text" [(ngModel)]="name" />
+  <br />
+  <br />
+  <input type="number" [(ngModel)]="age" />
+  <br />
+  <br />
   <div
     class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
     aria-hidden="true"
