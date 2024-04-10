@@ -58,6 +58,8 @@ export class AppComponent implements OnChanges {
   addItem(text: string, price: number): void {
     if(text === null || text.trim() === "" || price === null)
             return;
-        this.items.push(new Item(text, price));
+    this.items.push(new Item(text, price));
+    text = '';
+    price = 0;
   }
 }

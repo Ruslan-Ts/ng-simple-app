@@ -19,7 +19,7 @@
       >
       <input id="price" class="input" type="number" [(ngModel)]="price" />
     </div>
-    <button class="animate-pulse button" (click)="addItem(text, price)">
+    <button class="animate-pulse button" (formSubmit)="addItem(text, price)">
       Add item
     </button>
   </div>
