@@ -24,18 +24,18 @@ class Item {
     styleUrl: './app.component.scss',
     imports: [RouterOutlet, FormsModule, InputDataComponent, InputChangeComponent, ChildComponent]
 })
-export class AppComponent implements OnChanges { 
+export class AppComponent { 
     name ="Ruslan";
   age = 35;
   
-    ngOnChanges(changes: SimpleChanges) {
-      for (let propName in changes) {
-        let chng = changes[propName];
-        let cur  = JSON.stringify(chng.currentValue);
-        let prev = JSON.stringify(chng.previousValue);
-        console.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
-      }
-    }
+    // ngOnChanges(changes: SimpleChanges) {
+    //   for (let propName in changes) {
+    //     let chng = changes[propName];
+    //     let cur  = JSON.stringify(chng.currentValue);
+    //     let prev = JSON.stringify(chng.previousValue);
+    //     console.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+    //   }
+    // }
   
   title = 'Shopping list';
 
