@@ -66,12 +66,22 @@
   <app-input-data (onChanged)="onChanged($event)"></app-input-data>
   <br />
   <br />
-  <test-comp class="text-yellow-400" [name]="name"></test-comp>
+  <test-comp
+    [style.display]="visibility ? 'block' : 'none'"
+    class="text-yellow-400"
+    [name]="name"
+  ></test-comp>
   <input type="text" [(ngModel)]="name" />
   <br />
   <br />
   <input type="number" [(ngModel)]="age" />
   <br />
+  <button
+    class="text-sm uppercase text-white hover:text-[#555]"
+    (click)="chVis()"
+  >
+    {{ visibility ? "Hide NAME" : "Show NAME" }}
+  </button>
   <br />
   <div
     class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"

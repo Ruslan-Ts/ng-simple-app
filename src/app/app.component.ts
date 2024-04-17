@@ -27,6 +27,10 @@ class Item {
 export class AppComponent { 
     name ="Ruslan";
   age = 35;
+  visibility: boolean = true;
+  chVis():void {
+    this.visibility = !this.visibility
+  }
   
     // ngOnChanges(changes: SimpleChanges) {
     //   for (let propName in changes) {
